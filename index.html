@@ -5,14 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Michael Ogungbemi · HealthTech Business Analyst &amp; Team Lead</title>
 <meta name="description" content="HealthTech Business Analyst and Team Lead with an OTHM Level 5 Diploma in Health and Social Care Management. Process improvement, stakeholder management and data-driven service delivery.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<meta name="theme-color" content="#0a1a3f" id="tc">
+<script>(function(){var d=document.documentElement,s=null;try{s=localStorage.getItem('theme')}catch(e){}if(s!=='light'&&s!=='dark')s=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.setAttribute('data-theme',s)})()</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232b59ff'/><text x='32' y='40' font-family='Arial,Helvetica,sans-serif' font-size='22' font-weight='700' text-anchor='middle' fill='white'>MTO</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0a1a3f;--navy2:#13286a;--blue:#2b59ff;--gold:#ffc83d;--bg:#f3f6ff;--card:#fff;--ink:#0d1b3d;--muted:#51608a;--line:#dbe3fa;--shadow:0 10px 30px rgba(20,40,110,.10)}
-@media (prefers-color-scheme:dark){:root{--bg:#0a1228;--card:#111d3f;--ink:#e9eeff;--muted:#a3b1d9;--line:#24336a;--shadow:0 10px 30px rgba(0,0,0,.35)}}
+:root{color-scheme:light;--nav-bg:rgba(255,255,255,.86);--nav-ink:#0d1b3d;--nav-muted:#51608a;--nav-hover:rgba(43,89,255,.1);--nav-line:#d3def8;--tab-bg:#2b59ff;--tab-ink:#fff;--hero-ink:#0d1b3d;--hero-muted:#3d4f7c;--hero-acc:#1f45d6;--hero-btn-ink:#fff;--hero-chip:rgba(255,255,255,.65);--hero-chip-line:rgba(43,89,255,.25)}
+:root[data-theme="dark"]{color-scheme:dark;--nav-bg:rgba(6,13,34,.85);--nav-ink:#fff;--nav-muted:#c9d5ff;--nav-hover:rgba(255,255,255,.12);--nav-line:rgba(255,255,255,.18);--tab-bg:#ffc83d;--tab-ink:#1b1500;--hero-ink:#fff;--hero-muted:#c9d5ff;--hero-acc:#ffc83d;--hero-btn-ink:#1b1500;--hero-chip:rgba(255,255,255,.1);--hero-chip-line:rgba(255,255,255,.2);--bg:#0a1228;--card:#111d3f;--ink:#e9eeff;--muted:#a3b1d9;--line:#24336a;--shadow:0 10px 30px rgba(0,0,0,.35)}
 *{box-sizing:border-box}
+body,.sec.alt{transition:background-color .4s,color .4s}
 html{scroll-behavior:smooth;scroll-padding-top:5rem}
 body{margin:0;font:400 1.05rem/1.7 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
 h1,h2,h3{line-height:1.15;margin:0 0 .6em;font-weight:800;letter-spacing:-.02em}
@@ -24,35 +28,40 @@ a{color:var(--blue)}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
 /* nav tabs */
-nav{position:sticky;top:0;z-index:20;background:rgba(10,26,63,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding-top:env(safe-area-inset-top,0)}
+nav{position:sticky;top:0;z-index:20;background:var(--nav-bg);border-bottom:1px solid var(--nav-line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding-top:env(safe-area-inset-top,0)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.6rem;padding-bottom:.6rem}
-nav .brand{color:#fff;font-weight:800;text-decoration:none;white-space:nowrap}
+nav .brand{color:var(--nav-ink);font-weight:800;text-decoration:none;white-space:nowrap}
 .tabs{display:flex;gap:.3rem;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tabs a{display:block;padding:.4rem .85rem;border-radius:99px;color:#c9d5ff;text-decoration:none;font-weight:600;font-size:.92rem;white-space:nowrap;transition:background .2s,color .2s}
-.tabs a:hover{color:#fff;background:rgba(255,255,255,.1)}
-.tabs a.on{background:var(--gold);color:#1b1500}
-#bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--gold)}
+.tabs a{display:block;padding:.4rem .85rem;border-radius:99px;color:var(--nav-muted);text-decoration:none;font-weight:600;font-size:.92rem;white-space:nowrap;transition:background .2s,color .2s}
+.tabs a:hover{color:var(--nav-ink);background:var(--nav-hover)}
+.tabs a.on{background:var(--tab-bg);color:var(--tab-ink)}
+.themebtn{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid var(--nav-line);background:var(--nav-hover);color:var(--nav-ink);font:inherit;font-size:1.1rem;line-height:1;cursor:pointer;transition:transform .2s,background .2s}
+.themebtn:hover{transform:rotate(25deg)}
+#bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--tab-bg)}
 @media (max-width:820px){nav .brand{display:none}}
 /* hero */
-.hero{background:radial-gradient(900px 500px at 85% 0%,rgba(43,89,255,.55),transparent 60%),radial-gradient(600px 400px at 0% 100%,rgba(255,200,61,.18),transparent 60%),var(--navy);color:#fff;padding:4.5rem 0 5rem}
-.hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:3rem;align-items:center}
+.hero{position:relative;overflow:hidden;background:linear-gradient(170deg,#8fc1ff 0%,#d4e8ff 52%,#fff2cf 100%);color:var(--hero-ink);padding:4.5rem 0 5rem}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr 1fr;gap:3rem;align-items:center}
 @media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.portrait{order:-1}}
-.eyebrow{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:.25rem .9rem;border-radius:99px;font-weight:600;font-size:.9rem;margin-bottom:1.2rem}
-.hero h1 span{color:var(--gold)}
-.typed{color:var(--gold);min-height:1.2em;display:block}
+.eyebrow{display:inline-block;background:var(--hero-chip);border:1px solid var(--hero-chip-line);padding:.25rem .9rem;border-radius:99px;font-weight:600;font-size:.9rem;margin-bottom:1.2rem}
+.hero h1 span{color:var(--hero-acc)}
+.typed{color:var(--hero-acc);min-height:1.2em;display:block}
 .typed::after{content:"|";margin-left:2px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.lede{color:#c9d5ff;font-size:1.1rem;max-width:56ch}
+.lede{color:var(--hero-muted);font-size:1.1rem;max-width:56ch}
 .btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem}
 .btn{display:inline-block;padding:.8rem 1.4rem;border-radius:12px;font:inherit;font-weight:700;text-decoration:none;border:2px solid var(--gold);color:var(--gold);background:transparent;cursor:pointer;transition:transform .2s}
 .btn:hover{transform:translateY(-2px)}
 .btn.primary{background:var(--gold);color:#1b1500}
 .sec .btn{border-color:var(--blue);color:var(--blue)}
 .sec .btn.primary{background:var(--blue);color:#fff}
+.hero .btn{border-color:var(--hero-acc);color:var(--hero-acc)}
+.hero .btn.primary{background:var(--hero-acc);color:var(--hero-btn-ink)}
+dialog .btn{border-color:var(--blue);color:var(--blue)}
 .stats{display:flex;gap:2.2rem;margin-top:2rem;flex-wrap:wrap}
-.stats b{display:block;font-size:2rem;font-weight:800;color:var(--gold)}
-.stats span{font-size:.9rem;color:#c9d5ff}
+.stats b{display:block;font-size:2rem;font-weight:800;color:var(--hero-acc)}
+.stats span{font-size:.9rem;color:var(--hero-muted)}
 /* profile image slot */
 .portrait{margin:0;justify-self:center;text-align:center}
 .photo{width:min(320px,72vw);aspect-ratio:1;border-radius:32% 68% 55% 45%/48% 42% 58% 52%;background:linear-gradient(135deg,var(--blue),#6c8bff);padding:6px;animation:morph 10s ease-in-out infinite alternate}
@@ -60,7 +69,7 @@ nav .brand{color:#fff;font-weight:800;text-decoration:none;white-space:nowrap}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .photo .ini{font-size:4.5rem;font-weight:800;color:var(--gold)}
 @keyframes morph{to{border-radius:55% 45% 40% 60%/55% 55% 45% 45%}}
-.portrait figcaption{margin-top:1rem;color:#c9d5ff;font-size:.9rem}
+.portrait figcaption{margin-top:1rem;color:var(--hero-muted);font-size:.9rem}
 /* sections */
 .sec{padding:5rem 0}
 .sec.alt{background:var(--card)}
@@ -96,6 +105,9 @@ button.project:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .cert p{margin-top:.2rem}
 dialog{max-width:580px;width:calc(100% - 2rem);border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--ink);padding:1.8rem}
 dialog::backdrop{background:rgba(5,12,35,.65)}
+dialog{max-height:88vh;overflow:auto}
+dialog dd ul{margin:.3rem 0 0;padding-left:1.1rem}
+dialog dd li{padding:.15rem 0}
 dialog dt{font-weight:700;color:var(--blue);margin-top:.9rem}
 dialog dd{margin:.15rem 0 0;color:var(--muted)}
 .steps{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));list-style:none;margin:2rem 0 0;padding:0;counter-reset:s}
@@ -126,6 +138,23 @@ footer{background:var(--navy);color:#c9d5ff;padding:2rem 0 5rem;font-size:.92rem
   .dock a span{display:none}
   #top{bottom:calc(max(.8rem,env(safe-area-inset-bottom,0px)) + 4.2rem)}
 }
+/* skills floating around the profile image */
+.orbit{--o:min(340px,70vw);--r:calc(var(--o)*.5);position:relative;width:var(--o);aspect-ratio:1;display:grid;place-items:center;margin:0 auto}
+.orbit .photo{width:68%}
+.ring{position:absolute;inset:0}
+.tag{position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(var(--a)) translateY(calc(var(--r)*-1))}
+.chip{position:absolute;left:0;top:0;display:block;white-space:nowrap;padding:.3rem .8rem;border-radius:99px;font-size:.78rem;font-weight:700;background:var(--hero-chip);color:var(--hero-ink);border:1px solid var(--hero-chip-line);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 6px 16px rgba(10,26,63,.18);transform:translate(-50%,-50%) rotate(calc(var(--a)*-1));animation:bob 9s ease-in-out infinite alternate;animation-delay:var(--d,0s)}
+@keyframes bob{from{transform:translate(-50%,-50%) rotate(calc(var(--a)*-1)) translateY(0)}to{transform:translate(-50%,-50%) rotate(calc(var(--a)*-1)) translateY(-7px)}}
+.orbit:hover .ring,.orbit:hover .chip{animation-play-state:paused}
+/* day / night sky */
+.sky{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.nightbg{position:absolute;inset:0;background:radial-gradient(900px 500px at 85% 0%,rgba(43,89,255,.45),transparent 60%),linear-gradient(180deg,#040a1f 0%,#0a1a3f 100%);opacity:0;transition:opacity 1.1s}
+.sky::before{content:"";position:absolute;left:-6%;bottom:-50px;width:62%;height:150px;border-radius:50%;background:rgba(255,255,255,.75);filter:blur(34px);transition:opacity 1s}
+.stars{position:absolute;inset:0;opacity:0;transition:opacity 1.2s;background-image:radial-gradient(1.6px 1.6px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 90px 80px,#fff,transparent),radial-gradient(1.6px 1.6px at 160px 40px,#ffe9a6,transparent),radial-gradient(1px 1px at 230px 120px,#fff,transparent),radial-gradient(1.2px 1.2px at 60px 150px,#fff,transparent);background-size:260px 180px;animation:twinkle 3s ease-in-out infinite alternate}
+@keyframes twinkle{from{filter:brightness(.55)}to{filter:brightness(1.35)}}
+:root[data-theme="dark"] .nightbg{opacity:1}
+:root[data-theme="dark"] .sky::before{opacity:0}
+:root[data-theme="dark"] .stars{opacity:.95}
 /* reveal on scroll, only when JS is running */
 .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
 .js .reveal.in{opacity:1;transform:none}
@@ -144,11 +173,13 @@ footer{background:var(--navy);color:#c9d5ff;padding:2rem 0 5rem;font-size:.92rem
       <li><a href="#projects">Projects</a></li><li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button id="theme" class="themebtn" type="button" aria-label="Switch to dark mode"><span aria-hidden="true">☾</span></button>
   </div>
   <div id="bar"></div>
 </nav>
 
 <header class="hero" id="home">
+  <div class="sky" aria-hidden="true"><div class="nightbg"></div><div class="stars"></div></div>
   <div class="wrap">
     <div>
       <span class="eyebrow">Open to HealthTech BA and Team Lead roles</span>
@@ -164,10 +195,13 @@ footer{background:var(--navy);color:#c9d5ff;padding:2rem 0 5rem;font-size:.92rem
     </div>
     <!-- PROFILE IMAGE: save your photo as profile.jpg beside index.html. Initials show until it exists. -->
     <figure class="portrait">
-      <div class="photo"><div>
+      <div class="orbit">
+        <div class="photo"><div>
         <span class="ini" aria-hidden="true">MO</span>
         <img src="profile.jpg" alt="Portrait of Michael Ogungbemi" onerror="this.remove()">
       </div></div>
+        <div class="ring" aria-hidden="true"><span class="tag" style="--a:315deg"><span class="chip" style="--d:0s">Business Analysis</span></span><span class="tag" style="--a:45deg"><span class="chip" style="--d:-3s">SQL</span></span><span class="tag" style="--a:135deg"><span class="chip" style="--d:-6s">Power BI</span></span><span class="tag" style="--a:225deg"><span class="chip" style="--d:-4s">Team Leadership</span></span></div>
+      </div>
       <figcaption>Michael Ogungbemi · HealthTech Business Analyst &amp; Team Lead</figcaption>
     </figure>
   </div>
@@ -177,7 +211,7 @@ footer{background:var(--navy);color:#c9d5ff;padding:2rem 0 5rem;font-size:.92rem
 <section class="sec about" id="about"><div class="wrap reveal">
   <p class="kicker">About me</p>
   <h2>Healthcare leadership meets business analysis</h2>
-  <p>I am a results-driven HealthTech Business Analyst and Team Lead with strong experience in healthcare operations, process improvement, and strategic service delivery. Holding an NVQ Level 5 Diploma in Health and Social Care Management, I combine analytical expertise with hands-on leadership within health and social care environments to deliver efficient, person-centred, and technology-driven solutions.</p>
+  <p>I am a results-driven HealthTech Business Analyst and Team Lead with strong experience in healthcare operations, process improvement, and strategic service delivery. Holding an OTHM Level 5 Diploma in Health and Social Care Management, I combine analytical expertise with hands-on leadership within health and social care environments to deliver efficient, person-centred, and technology-driven solutions.</p>
   <p>I have a proven track record of translating complex business and operational needs into practical, data-driven solutions that improve service quality, enhance compliance, reduce costs, and support organisational growth. My experience spans business analysis, stakeholder management, workflow optimisation, process automation, and cross-functional team leadership within healthcare and supported living settings.</p>
   <p>As a Team Lead, I excel at coordinating multidisciplinary teams, improving operational performance, implementing innovative digital solutions, and ensuring high standards of care delivery. I am passionate about leveraging technology, analytics, and continuous improvement strategies to enhance both patient outcomes and organisational effectiveness.</p>
   <p>I thrive in collaborative environments where strategic thinking, leadership, problem-solving, and innovation are essential to driving sustainable business success.</p>
@@ -188,12 +222,11 @@ footer{background:var(--navy);color:#c9d5ff;padding:2rem 0 5rem;font-size:.92rem
   <p class="kicker">Skills</p>
   <h2>What I bring to a team</h2>
   <div class="skillgrid">
-    <div><h3>Business analysis</h3><ul><li>Requirements gathering</li><li>Stakeholder management</li><li>Workflow optimisation</li><li>Process automation</li></ul></div>
+    <div><h3>Business analysis</h3><ul><li>Requirements gathering</li><li>Stakeholder analysis and RACI</li><li>AS-IS / TO-BE process mapping</li><li>Gap analysis and BRDs</li><li>Workflow optimisation</li></ul></div>
     <div><h3>Leadership</h3><ul><li>Team coordination</li><li>Multidisciplinary teams</li><li>Operational performance</li><li>Quality of care delivery</li></ul></div>
-    <div><h3>Data and tools</h3><ul><li>SQL</li><li>Microsoft Excel</li><li>Power BI</li><li>Jira</li></ul></div>
+    <div><h3>Data and tools</h3><ul><li>SQL (PostgreSQL)</li><li>Microsoft Excel</li><li>Power BI</li><li>Jira</li><li>draw.io</li></ul></div>
     <div><h3>Reporting</h3><ul><li>Dashboards</li><li>Data visualisation</li><li>PowerPoint</li><li>Executive summaries</li></ul></div>
   </div>
-  <p class="sub" style="margin-top:1.5rem">Edit this list so it only shows what you can speak to in an interview.</p>
 </div></section>
 
 <section class="sec" id="expertise"><div class="wrap reveal">
@@ -237,14 +270,15 @@ footer{background:var(--navy);color:#c9d5ff;padding:2rem 0 5rem;font-size:.92rem
 
 <section class="sec" id="projects"><div class="wrap reveal">
   <p class="kicker">Projects</p>
-  <h2>Analysis that led to action</h2>
-  <p class="sub">Select a card to read the summary. Add your own findings, and delete any project you did not complete.</p>
+  <h2>Case studies and capstone projects</h2>
+  <p class="sub">Capstone case studies from my HealthTech Business Analysis and health analytics training with 10Alytics. Select a card to read the scenario, my role, the scope and the tools used.</p>
   <div class="grid">
-    <button class="project" data-open="p1"><small>Healthcare · Microsoft Excel</small><h3>Patient appointment no-show analysis</h3><p>Why patients miss appointments across clinic branches and specialties.</p><span class="more">Read summary →</span></button>
-    <button class="project" data-open="p2"><small>Hospitality · Microsoft Excel</small><h3>Sunshine Resort customer analysis</h3><p>Understanding customer churn among international guests.</p><span class="more">Read summary →</span></button>
-    <button class="project" data-open="p3"><small>Banking · SQL</small><h3>Bank fraud detection analysis</h3><p>Finding why a bank's fraud alerts were missing real cases.</p><span class="more">Read summary →</span></button>
-    <button class="project" data-open="p4"><small>Retail · Business analysis</small><h3>Kardia Stores customer behaviour</h3><p>Customer buying patterns and product recommendations.</p><span class="more">Read summary →</span></button>
-    <button class="project" data-open="p5"><small>Public health · SQL · PowerPoint</small><h3>Immunisation data presentation</h3><p>SQL results on an immunisation dataset, presented as slides.</p><span class="more">Read summary →</span></button>
+    <button class="project" data-open="p1"><small>Digital health transformation · Jira</small><h3>ASEAN Digital Health &amp; Climate Resilience Initiative (ADHCRI)</h3><p>A five-year regional programme to improve secure, governed exchange of public health information across Southeast Asia.</p><span class="more">Read summary →</span></button>
+    <button class="project" data-open="p2"><small>Project initiation · Stakeholders · Business case</small><h3>Closed-Loop Medication &amp; Pharmacy Optimisation at Apex Health Network</h3><p>Connecting prescribing, pharmacy inventory and bedside administration to improve patient safety and reduce waste.</p><span class="more">Read summary →</span></button>
+    <button class="project" data-open="p3"><small>Gap analysis · Process mapping · BRD</small><h3>Drug Delivery Process Improvement at MedBridge Pharmacy</h3><p>Finding why routine home delivery was slow, error-prone and hard to track, and documenting the requirements to fix it.</p><span class="more">Read summary →</span></button>
+    <button class="project" data-open="p4"><small>Retail sales analytics · Power BI</small><h3>Supplement Sales Performance Analysis at VitaCore Supplements Ltd.</h3><p>An interactive Power BI dashboard showing what drives revenue, profit, returns and customer satisfaction.</p><span class="more">Read summary →</span></button>
+    <button class="project" data-open="p5"><small>Healthcare analytics · SQL</small><h3>Immunisation Programme Analysis Across Asia</h3><p>SQL analysis of vaccination records to compare countries, regions and vaccines.</p><span class="more">Read summary →</span></button>
+    <button class="project" data-open="p6"><small>Patient access · Excel</small><h3>Patient Appointment No-Show Analysis at TrueNorth Health Network</h3><p>Excel analysis of missed appointments across clinics in Europe and North America.</p><span class="more">Read summary →</span></button>
   </div>
 </div></section>
 
@@ -310,18 +344,36 @@ footer{background:var(--navy);color:#c9d5ff;padding:2rem 0 5rem;font-size:.92rem
 </div>
 <button id="top" aria-label="Back to top">↑</button>
 
-<!-- Project summaries: replace the brackets with your own work -->
-<dialog id="p1"><h3>Patient appointment no-show analysis</h3><dl><dt>Question</dt><dd>[Why do patients miss appointments, and where is it worst?]</dd><dt>Data and method</dt><dd>[Dataset, cleaning steps, Excel pivots or formulas.]</dd><dt>Findings</dt><dd>[Your real numbers and patterns.]</dd><dt>Recommendation</dt><dd>[What you advised the clinic to do.]</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
-<dialog id="p2"><h3>Sunshine Resort customer analysis</h3><dl><dt>Question</dt><dd>[What was driving customer churn?]</dd><dt>Data and method</dt><dd>[Dataset and Excel approach.]</dd><dt>Findings</dt><dd>[Your real findings.]</dd><dt>Recommendation</dt><dd>[Your recommendations.]</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
-<dialog id="p3"><h3>Bank fraud detection analysis</h3><dl><dt>Question</dt><dd>[Why were fraud alerts missing real cases?]</dd><dt>Data and method</dt><dd>[Tables used and the SQL you wrote.]</dd><dt>Findings</dt><dd>[Your real findings.]</dd><dt>Recommendation</dt><dd>[Changes you proposed to the alert rules.]</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
-<dialog id="p4"><h3>Kardia Stores customer behaviour</h3><dl><dt>Question</dt><dd>[Which customers buy what, and what should be recommended?]</dd><dt>Data and method</dt><dd>[Dataset and analysis approach.]</dd><dt>Findings</dt><dd>[Your real findings.]</dd><dt>Recommendation</dt><dd>[Your recommendations.]</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
-<dialog id="p5"><h3>Immunisation data presentation</h3><dl><dt>Question</dt><dd>[What does the immunisation data show?]</dd><dt>Data and method</dt><dd>[Dataset and SQL queries.]</dd><dt>Findings</dt><dd>[Your real findings.]</dd><dt>Recommendation</dt><dd>[What you presented and to whom.]</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<!-- Project summaries -->
+<dialog id="p1"><h3>ASEAN Digital Health &amp; Climate Resilience Initiative (ADHCRI)</h3><dl><dt>Scenario</dt><dd>The ASEAN Regional Health Resilience Programme (ARHRP) proposed ADHCRI to strengthen how health systems across Southeast Asia detect, report and respond to public health threats. Public health information was being collected through disconnected systems, spreadsheets, email, telephone and paper reporting, causing delays, duplicate entry, incomplete reports and limited visibility of emerging disease patterns.</dd><dt>My role</dt><dd>Health Business Analyst within the consulting team engaged by ARHRP.</dd><dt>Scope</dt><dd><ul><li>Stakeholder analysis, stakeholder matrices and a RACI</li><li>SWOT, PESTLE, McKinsey 7S, Fishbone and 5 Whys analyses</li><li>Country readiness assessment and current-state documentation</li><li>AS-IS and TO-BE process maps with a structured gap analysis</li><li>Five-year business case and financial analysis</li><li>Business Requirements Document, risk assessment and implementation recommendations</li><li>Jira epics, user stories, acceptance criteria and at least three sprints</li></ul></dd><dt>Tools</dt><dd>Jira, draw.io, Microsoft Word / Google Docs</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<dialog id="p2"><h3>Closed-Loop Medication &amp; Pharmacy Optimisation at Apex Health Network</h3><dl><dt>Scenario</dt><dd>Apex Health Network runs 12 inpatient hospitals and 45 outpatient clinics. Prescribing, pharmacy inventory (on legacy standalone software) and bedside administration (paper charts and verbal confirmation) were disconnected. The case describes medication errors and adverse drug events, no real-time inventory visibility, stockouts of critical drugs, financial leakage from expired or unbilled medication, nurses spending up to 30% of a shift double-checking paper orders, controlled-substance compliance risk and limited analytics.</dd><dt>My role</dt><dd>Business Analyst on a clinical operations and pharmacy technology initiative.</dd><dt>Scope</dt><dd><ul><li>Identification of at least 10 project stakeholders, and an approach to identify, prioritise, engage and communicate with 100+ stakeholders</li><li>Stakeholder Analysis Matrix, RACI Matrix (10+ activities) and Stakeholder Communication Plan</li><li>Business and clinical problem analysis</li><li>Recommended digital solution for closed-loop medication management</li><li>Business case for the Project Sponsor</li><li>SDLC methodology recommendation with justification</li></ul></dd><dt>Tools</dt><dd>Stakeholder, RACI, communication plan and business case templates</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<dialog id="p3"><h3>Drug Delivery Process Improvement at MedBridge Pharmacy</h3><dl><dt>Scenario</dt><dd>MedBridge Pharmacy offers routine home delivery, but delivery took up to 7 days against a 3-day target. Capture errors affected 12% of orders and staff could see the status of only 40% of them. Separate order and stock records, calls and messages meant patients kept phoning for updates while staff spent time locating orders and correcting information.</dd><dt>My role</dt><dd>Healthtech Business Analyst: gather evidence, engage stakeholders, map workflows and document requirements.</dd><dt>Scope</dt><dd><ul><li>Gap analysis comparing current and desired states, with root causes, impact and action plans, plus a Fishbone diagram</li><li>AS-IS and TO-BE process maps built in draw.io</li><li>Business Requirements Document covering business overview, objectives, scope, stakeholders and proposed solution</li><li>Business, stakeholder, functional and non-functional requirements</li><li>MoSCoW prioritisation (Must, Should, Could, Won't Have for Now)</li></ul></dd><dt>Tools</dt><dd>Gap analysis template, draw.io, BRD</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<dialog id="p4"><h3>Supplement Sales Performance Analysis at VitaCore Supplements Ltd.</h3><dl><dt>Scenario</dt><dd>VitaCore Supplements Ltd. sells multiple supplement products across countries, regions, cities, sales channels and sales representatives. Management lacked a clear view of what was driving revenue, profit, product returns and customer satisfaction, including products with high sales but weak profit.</dd><dt>My role</dt><dd>Healthcare Data Analyst responsible for cleaning and analysing the sales dataset in Power BI.</dd><dt>Scope</dt><dd><ul><li>Cleaning duplicates, missing values, inconsistent text, currency symbols and wrong data types</li><li>Calculated columns and measures for revenue, profit margin, return rate and average rating</li><li>Performance analysis by product, sales rep, channel, country, city and region</li><li>Interactive dashboard with KPIs, charts, filters and slicers</li><li>Recommendations to improve sales, profit, returns and customer satisfaction</li></ul></dd><dt>Tools</dt><dd>Power BI</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<dialog id="p5"><h3>Immunisation Programme Analysis Across Asia</h3><dl><dt>Scenario</dt><dd>Governments across Asia invest heavily in immunisation programmes, and public health officials need reliable data to see which vaccines are administered most, which countries have the highest activity and where more support may be needed. The Ministry of Health asked five questions about vaccines, countries, regions above 500,000 doses, the least administered vaccine and the highest average vaccinations per report.</dd><dt>My role</dt><dd>Healthcare Data Analyst using SQL to query the immunisation database.</dd><dt>Scope</dt><dd><ul><li>Reviewing the countries and immunization_records tables</li><li>Filtering with WHERE by country, region, vaccine and report year</li><li>Joining records to countries on country_id</li><li>Aggregating with SUM, COUNT, AVG, GROUP BY and HAVING</li><li>Ranking results with ORDER BY to answer the five business questions</li></ul></dd><dt>Tools</dt><dd>PostgreSQL</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
+<dialog id="p6"><h3>Patient Appointment No-Show Analysis at TrueNorth Health Network</h3><dl><dt>Scenario</dt><dd>TrueNorth Health Network operates clinics across Europe and North America. Appointment no-shows waste doctor time, reduce clinic revenue and delay care for other patients, and leadership needed to know which locations, patient groups and scheduling patterns carry the highest no-show risk.</dd><dt>My role</dt><dd>Healthcare Data Analyst cleaning and analysing appointment data in Excel.</dd><dt>Scope</dt><dd><ul><li>Cleaning duplicates, missing values, inconsistent text, invalid dates, wrong ages and mixed no-show labels</li><li>Pivot tables, charts and formulas by country, clinic branch, specialty, age group, reminder channel and wait days</li><li>Analysis of previous no-show history and scheduling gaps</li><li>Excel dashboard with KPIs, trends, pivot charts and slicers</li><li>Recommendations on where management should act first</li></ul></dd><dt>Tools</dt><dd>Microsoft Excel</dd></dl><div class="btns"><button class="btn" data-close>Close</button></div></dialog>
 
 <script>
 (function(){
 var $=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
 var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.getElementById('y').textContent=new Date().getFullYear();
+/* day / night theme: follows the device setting automatically, the button overrides it */
+var root=document.documentElement,tb=document.getElementById('theme'),tc=document.getElementById('tc'),mq=window.matchMedia('(prefers-color-scheme: dark)');
+function saved(){try{var v=localStorage.getItem('theme');return v==='light'||v==='dark'?v:null}catch(e){return null}}
+function applyTheme(m){
+  root.setAttribute('data-theme',m);
+  tb.firstChild.textContent=m==='dark'?'☀':'☾';
+  tb.setAttribute('aria-label',m==='dark'?'Switch to light mode':'Switch to dark mode');
+  if(tc)tc.setAttribute('content',m==='dark'?'#060d22':'#0a1a3f');
+}
+applyTheme(root.getAttribute('data-theme')||'light');
+tb.addEventListener('click',function(){
+  var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+  applyTheme(n);try{localStorage.setItem('theme',n)}catch(e){}
+});
+function sysChange(){if(!saved())applyTheme(mq.matches?'dark':'light')}
+if(mq.addEventListener)mq.addEventListener('change',sysChange);else if(mq.addListener)mq.addListener(sysChange);
+
 
 /* project dialogs */
 $('[data-open]').forEach(function(b){b.addEventListener('click',function(){document.getElementById(b.dataset.open).showModal()})});
